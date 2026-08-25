@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito — ShopZone</title>
+  <meta name="description" content="Revisa tu carrito de compras y procede al pago." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="36" height="36" rx="10" fill="#6c63ff"/>
+      <text x="6" y="26" font-size="22" fill="white">🛍</text>
+    </svg>
+    Shop<span>Zone</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="products.html">Productos</a></li>
+    <li><a href="index.html#categorias">Categorías</a></li>
+    <li><a href="index.html#ofertas">Ofertas</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-icon" id="open-cart-btn" aria-label="Carrito">
+      🛒
+      <span class="cart-badge cart-count" style="display:none">0</span>
+    </button>
+    <button class="btn-icon" aria-label="Cuenta">👤</button>
+    <button class="btn-primary">Ingresar</button>
+  </div>
+</nav>
+
+<!-- ===== CART SIDEBAR ===== -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>🛒 Mi Carrito</h3>
+    <button class="btn-close-cart" id="close-cart-btn" aria-label="Cerrar">✕</button>
+  </div>
+  <div class="cart-items" id="cart-sidebar-items"></div>
+  <div class="cart-footer" id="cart-sidebar-footer"></div>
+</aside>
+
+<!-- ===== CART PAGE ===== -->
+<main class="cart-page">
+  <h1>🛒 Tu Carrito de Compras</h1>
+
+  <div style="margin-bottom:1.5rem">
+    <a href="products.html" style="color:var(--primary);font-weight:600;font-size:0.95rem">← Continuar comprando</a>
+  </div>
+
+  <div class="cart-layout">
+    <div id="cart-page-items"></div>
+    <div id="cart-page-summary"></div>
+  </div>
+
+  <!-- Payment methods -->
+  <div style="margin-top:2rem;background:white;border-radius:var(--radius);padding:1.5rem;box-shadow:var(--card-shadow)">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;color:var(--text-light);text-transform:uppercase;letter-spacing:1px">Métodos de Pago Aceptados</h3>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center">
+      <span style="background:var(--bg);padding:0.5rem 1rem;border-radius:8px;font-weight:700;font-size:0.9rem">💳 Visa</span>
+      <span style="background:var(--bg);padding:0.5rem 1rem;border-radius:8px;font-weight:700;font-size:0.9rem">💳 MasterCard</span>
+      <span style="background:var(--bg);padding:0.5rem 1rem;border-radius:8px;font-weight:700;font-size:0.9rem">🏦 Transferencia</span>
+      <span style="background:var(--bg);padding:0.5rem 1rem;border-radius:8px;font-weight:700;font-size:0.9rem">📱 PayPal</span>
+      <span style="background:var(--bg);padding:0.5rem 1rem;border-radius:8px;font-weight:700;font-size:0.9rem">🪙 Criptomonedas</span>
+    </div>
+  </div>
+</main>
+
+<!-- ===== TOAST ===== -->
+<div class="toast-container"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
