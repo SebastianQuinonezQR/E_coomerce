@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopZone — Tu Tienda Online Favorita</title>
+  <meta name="description" content="Descubre miles de productos con los mejores precios. Electrónica, moda, hogar y más en ShopZone." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="36" height="36" rx="10" fill="#6c63ff"/>
+      <text x="6" y="26" font-size="22" fill="white">🛍</text>
+    </svg>
+    Shop<span>Zone</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Inicio</a></li>
+    <li><a href="products.html">Productos</a></li>
+    <li><a href="#categorias">Categorías</a></li>
+    <li><a href="#ofertas">Ofertas</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-icon" id="open-cart-btn" aria-label="Carrito">
+      🛒
+      <span class="cart-badge cart-count" style="display:none">0</span>
+    </button>
+    <button class="btn-icon" aria-label="Cuenta">👤</button>
+    <button class="btn-primary">Ingresar</button>
+    <button class="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== CART SIDEBAR ===== -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>🛒 Mi Carrito</h3>
+    <button class="btn-close-cart" id="close-cart-btn" aria-label="Cerrar">✕</button>
+  </div>
+  <div class="cart-items" id="cart-sidebar-items"></div>
+  <div class="cart-footer" id="cart-sidebar-footer"></div>
+</aside>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">Nueva temporada 2025</div>
+      <h1>
+        Descubre lo Mejor<br>
+        del <span class="gradient-text">Comercio Digital</span>
+      </h1>
+      <p>Miles de productos de las mejores marcas con envío rápido, pagos seguros y devoluciones fáciles. ¡Tu tienda favorita está aquí!</p>
+      <div class="hero-cta">
+        <button class="btn-hero-primary" onclick="window.location.href='products.html'">
+          Ver Productos 🚀
+        </button>
+        <button class="btn-hero-secondary" onclick="document.getElementById('ofertas').scrollIntoView({behavior:'smooth'})">
+          Ver Ofertas 🔥
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">50K+</span>
+          <span class="stat-label">Clientes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">2K+</span>
+          <span class="stat-label">Productos</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">4.9★</span>
+          <span class="stat-label">Calificación</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hero-product-card">
+          <div class="hpc-emoji">⌚</div>
+          <div class="hpc-name">Smartwatch Series 5</div>
+          <div class="hpc-price">$199.99</div>
+          <div class="hpc-stars">★★★★★</div>
+        </div>
+        <div class="hero-product-card">
+          <div class="hpc-emoji">🎧</div>
+          <div class="hpc-name">Auriculares Pro X</div>
+          <div class="hpc-price">$89.99</div>
+          <div class="hpc-stars">★★★★★</div>
+        </div>
+        <div class="hero-product-card">
+          <div class="hpc-emoji">📷</div>
+          <div class="hpc-name">Cámara Mirrorless</div>
+          <div class="hpc-price">$549.99</div>
+          <div class="hpc-stars">★★★★½</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATEGORÍAS ===== -->
+<section class="section" id="categorias">
+  <div class="section-header">
+    <div class="section-tag">Explorar</div>
+    <h2>Compra por Categoría</h2>
+    <p>Encuentra exactamente lo que buscas en nuestras categorías especializadas</p>
+  </div>
+  <div class="categories-grid">
+    <a href="products.html?cat=electronica" class="category-card">
+      <div class="category-icon">📱</div>
+      <h3>Electrónica</h3>
+      <span>234 productos</span>
+    </a>
+    <a href="products.html?cat=moda" class="category-card">
+      <div class="category-icon">👗</div>
+      <h3>Moda</h3>
+      <span>189 productos</span>
+    </a>
+    <a href="products.html?cat=hogar" class="category-card">
+      <div class="category-icon">🏠</div>
+      <h3>Hogar</h3>
+      <span>312 productos</span>
+    </a>
+    <a href="products.html?cat=belleza" class="category-card">
+      <div class="category-icon">💄</div>
+      <h3>Belleza</h3>
+      <span>98 productos</span>
+    </a>
+    <a href="products.html?cat=deportes" class="category-card">
+      <div class="category-icon">⚽</div>
+      <h3>Deportes</h3>
+      <span>156 productos</span>
+    </a>
+    <a href="products.html?cat=libros" class="category-card">
+      <div class="category-icon">📚</div>
+      <h3>Libros</h3>
+      <span>421 productos</span>
+    </a>
+    <a href="products.html?cat=juguetes" class="category-card">
+      <div class="category-icon">🧸</div>
+      <h3>Juguetes</h3>
+      <span>87 productos</span>
+    </a>
+    <a href="products.html?cat=mascotas" class="category-card">
+      <div class="category-icon">🐾</div>
+      <h3>Mascotas</h3>
+      <span>63 productos</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== FEATURED PRODUCTS ===== -->
+<section class="section section-alt" id="destacados">
+  <div class="section-header">
+    <div class="section-tag">Lo Más Vendido</div>
+    <h2>Productos Destacados</h2>
+    <p>Los favoritos de nuestros clientes, seleccionados con cuidado para ti</p>
+  </div>
+  <div class="products-container">
+    <div class="products-grid" id="featured-grid"></div>
+  </div>
+  <div style="text-align:center;margin-top:2.5rem">
+    <button class="btn-primary" style="font-size:1rem;padding:0.9rem 2.5rem" onclick="window.location.href='products.html'">
+      Ver Todos los Productos →
+    </button>
+  </div>
+</section>
+
+<!-- ===== PROMO BANNER ===== -->
+<section class="promo-banner" id="ofertas">
+  <div class="section-tag" style="color:var(--accent);background:rgba(67,233,123,0.15);border:1px solid rgba(67,233,123,0.3)">Oferta Especial</div>
+  <h2>¡Super Sale! Hasta 60% OFF 🔥</h2>
+  <p>Oferta por tiempo limitado en electrónica, moda y más. ¡No te lo pierdas!</p>
+  <div class="countdown">
+    <div class="countdown-item">
+      <span class="countdown-number" id="cd-days">00</span>
+      <span class="countdown-label">Días</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-number" id="cd-hours">00</span>
+      <span class="countdown-label">Horas</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-number" id="cd-mins">00</span>
+      <span class="countdown-label">Minutos</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-number" id="cd-secs">00</span>
+      <span class="countdown-label">Segundos</span>
+    </div>
+  </div>
+  <button class="btn-hero-primary" onclick="window.location.href='products.html'">Aprovechar Oferta →</button>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-tag">¿Por qué elegirnos?</div>
+    <h2>La Mejor Experiencia de Compra</h2>
+    <p>Tu satisfacción es nuestra prioridad número uno</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon fi-purple">🚀</div>
+      <h3>Envío Ultrarrápido</h3>
+      <p>Entrega en 24-48 horas a todo el país. Envío gratis en compras mayores a $50.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon fi-pink">🔒</div>
+      <h3>Pago Seguro</h3>
+      <p>Transacciones 100% seguras con encriptación SSL y múltiples métodos de pago.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon fi-green">↩️</div>
+      <h3>Devolución Fácil</h3>
+      <p>30 días para devoluciones sin complicaciones. Tu satisfacción garantizada.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon fi-orange">💬</div>
+      <h3>Soporte 24/7</h3>
+      <p>Equipo de atención al cliente disponible las 24 horas, los 7 días de la semana.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section section-alt">
+  <div class="section-header">
+    <div class="section-tag">Reseñas</div>
+    <h2>Lo Que Dicen Nuestros Clientes</h2>
+    <p>Más de 50,000 clientes satisfechos confían en nosotros</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Increíble experiencia de compra. Los productos llegaron rápido y bien empacados. Definitivamente volvería a comprar aquí."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">👩</div>
+        <div>
+          <div class="testimonial-name">María González</div>
+          <div class="testimonial-role">Cliente frecuente</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"La variedad de productos es enorme y los precios son muy competitivos. El soporte al cliente es excepcional, siempre disponibles."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">👨</div>
+        <div>
+          <div class="testimonial-name">Carlos Rodríguez</div>
+          <div class="testimonial-role">Comprador verificado</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Compré mis auriculares y llegaron el día siguiente. La calidad supera las expectativas. ¡ShopZone es mi tienda de referencia!"</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">👩</div>
+        <div>
+          <div class="testimonial-name">Ana Martínez</div>
+          <div class="testimonial-role">Miembro Premium</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="newsletter" id="contacto">
+  <div class="section-tag" style="color:white;background:rgba(255,255,255,0.2);margin-bottom:1rem">Newsletter</div>
+  <h2>¡No Te Pierdas las Mejores Ofertas! 🎁</h2>
+  <p>Suscríbete y recibe descuentos exclusivos, novedades y más directamente en tu correo.</p>
+  <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+    <input type="email" id="newsletter-email" placeholder="Tu correo electrónico..." required />
+    <button type="submit">Suscribirme</button>
+  </form>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>Shop<span>Zone</span></h3>
+      <p>Tu destino de compras en línea favorito. Ofrecemos los mejores productos con la mejor experiencia de compra.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+        <a href="#" class="social-link" aria-label="Instagram">📸</a>
+        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+        <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+        <a href="#" class="social-link" aria-label="TikTok">🎵</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Tienda</h4>
+      <a href="products.html">Todos los productos</a>
+      <a href="products.html?cat=electronica">Electrónica</a>
+      <a href="products.html?cat=moda">Moda</a>
+      <a href="products.html?cat=hogar">Hogar</a>
+      <a href="#">Ofertas del día</a>
+    </div>
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <a href="#">Sobre nosotros</a>
+      <a href="#">Blog</a>
+      <a href="#">Trabaja con nosotros</a>
+      <a href="#">Afiliados</a>
+      <a href="#">Prensa</a>
+    </div>
+    <div class="footer-col">
+      <h4>Soporte</h4>
+      <a href="#">Centro de ayuda</a>
+      <a href="#">Política de devoluciones</a>
+      <a href="#">Seguimiento de pedidos</a>
+      <a href="#">Política de privacidad</a>
+      <a href="#">Términos y condiciones</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ShopZone. Todos los derechos reservados.</span>
+    <span>Hecho con ❤️ para ti</span>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast-container"></div>
+
+<script src="app.js"></script>
+<script>
+function subscribeNewsletter(e) {
+  e.preventDefault();
+  const email = document.getElementById("newsletter-email").value;
+  showToast(`✉️ ¡Gracias! Te has suscrito con ${email}`, "success");
+  document.getElementById("newsletter-email").value = "";
+}
+</script>
+</body>
+</html>
